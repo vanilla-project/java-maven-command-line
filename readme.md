@@ -30,6 +30,16 @@ mvn test
 `mvn` will automatically find all tests inside the `src/test` directory and run them.
 
 
+### Testing Approach
+
+The test for class `Example` is only verifying the return value of one method.
+
+`App` on the other hand is tested via a test-double that gets injected.
+This allows us to _spy_ on the output of it.
+We want to avoid printing anything to the screen while running the tests.
+Injecting a test double in this instance is a nice way to isolate our application from the command line.
+
+
 ## Built With
 
 - [Java](https://www.java.com)
