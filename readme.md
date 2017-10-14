@@ -16,7 +16,7 @@ After cloning this repository, change into the newly created directory and run
 mvn package
 ```
 
-This will install all dependencies needed for the project as well as compile all source files into a JAR file.
+This will install all dependencies needed for the project as well as compile all source files into an executable JAR file.
 
 
 ## Running the Tests
@@ -38,6 +38,18 @@ The test for class `Example` is only verifying the return value of one method.
 This allows us to _spy_ on the output of it.
 We want to avoid printing anything to the screen while running the tests.
 Injecting a test double in this instance is a nice way to isolate our application from the command line.
+
+In the actual `Main` class we then inject `System.out`, which is Java's standard output stream.
+
+
+## Running the Application
+
+After running `mvn package` the resulting JAR file is located in directory `target`.
+The application can now be run by executing
+
+```
+java -jar target/java-maven-command-line-1.0-SNAPSHOT.jar
+```
 
 
 ## Built With
